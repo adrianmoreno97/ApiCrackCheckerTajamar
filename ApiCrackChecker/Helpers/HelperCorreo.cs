@@ -19,7 +19,7 @@ namespace ApiCrackChecker.Helpers
         }
         public async Task<String> EnviarEmail(String email, int id, String accion)
         {
-            var apiKey = configuration["SENDGRID_APIKEY"];
+            var apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY");
             var client = new SendGridClient(apiKey);
             String subject = "";
             String content = "";
